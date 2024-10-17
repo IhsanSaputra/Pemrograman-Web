@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>penjumlahan</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function hitungPenjumlahan() {
+            var angka1 = parseFloat(document.getElementById("angka1").value);
+            var angka2 = parseFloat(document.getElementById("angka2").value);
+
+            if (isNaN(angka1) || isNaN(angka2)) {
+                document.getElementById("hasil").innerHTML = "Masukkan angka yang valid!";
+                return;
+            }
+
+            var hasil = angka1 + angka2;
+            document.getElementById("hasil").innerHTML = "Hasil: " + hasil;
+        }
+
+        function resetForm() {
+            document.getElementById("angka1").value = '';
+            document.getElementById("angka2").value = '';
+            document.getElementById("hasil").innerHTML = '';
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>penjumlahan</h1>
+
+        <div class="input-group">
+            <label for="angka1">bilangan pertama</label>
+            <input type="number" id="angka1" placeholder="masukkan bilangan pertama">
+        </div>
+
+        <div class="input-group">
+            <label for="angka2">bilangan kedua</label>
+            <input type="number" id="angka2" placeholder="masukkan bilangan kedua">
+        </div>
+
+        <div class="button-container">
+            <button onclick="hitungPenjumlahan()">jumlahkan</button>
+            <button class="reset" onclick="resetForm()">reset</button>
+        </div>
+
+        <p id="hasil"></p>
+    </div>
+
+</body>
+</html>
